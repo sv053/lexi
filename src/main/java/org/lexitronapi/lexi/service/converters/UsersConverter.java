@@ -1,7 +1,7 @@
-package org.lexitronapi.lexi.service;
+package org.lexitronapi.lexi.service.converters;
 
 import org.lexitronapi.lexi.dto.UserDto;
-import org.lexitronapi.lexi.entiities.User;
+import org.lexitronapi.lexi.entities.User;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,4 +1,4 @@
-package org.lexitronapi.lexi.entiities;
+package org.lexitronapi.lexi.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,16 +9,11 @@ import javax.persistence.*;
 @Table(name = "users")
 @Data
 @NoArgsConstructor
-public class User {
+public class Txt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
-    private String name;
-    @Column
-    private String login;
-    @Column
-    private String email;
-
+    private String text;
 }

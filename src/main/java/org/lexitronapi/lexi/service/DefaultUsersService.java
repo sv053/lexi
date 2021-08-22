@@ -2,8 +2,10 @@ package org.lexitronapi.lexi.service;
 
 import lombok.AllArgsConstructor;
 import org.lexitronapi.lexi.dto.UserDto;
-import org.lexitronapi.lexi.entiities.User;
+import org.lexitronapi.lexi.entities.User;
 import org.lexitronapi.lexi.repo.UsersRepository;
+import org.lexitronapi.lexi.service.converters.UsersConverter;
+import org.lexitronapi.lexi.service.interfaces.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

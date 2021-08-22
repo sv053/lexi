@@ -3,7 +3,7 @@ package org.lexitronapi.lexi.controllers;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.lexitronapi.lexi.dto.UserDto;
-import org.lexitronapi.lexi.service.UserService;
+import org.lexitronapi.lexi.service.interfaces.UserService;
 import org.lexitronapi.lexi.service.ValidationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

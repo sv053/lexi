@@ -8,6 +8,8 @@ import org.lexitronapi.lexi.service.ValidationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -24,7 +26,7 @@ public class UsersController {
         return usersService.saveUser(usersDto);
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("/findAll") // для работы с базой
     public List<UserDto> findAllUsers() {
         log.info("Handling find all users request");
         return usersService.findAll();

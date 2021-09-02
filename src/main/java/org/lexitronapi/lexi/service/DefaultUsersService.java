@@ -8,6 +8,8 @@ import org.lexitronapi.lexi.service.converters.UsersConverter;
 import org.lexitronapi.lexi.service.interfaces.UserService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,14 +45,33 @@ public class DefaultUsersService implements UserService {
         return null;
     }
 
-    @Override
+//    @Override // для работы с базой
+//    public List<UserDto> findAll() {
+//
+//        return usersRepository.findAll()
+//                .stream()
+//                .map(usersConverter::fromUserToUserDto)
+//                .collect(Collectors.toList());
+//    }
+
+    @Override  // для работы без базы
     public List<UserDto> findAll() {
 
-        return usersRepository.findAll()
-                .stream()
-                .map(usersConverter::fromUserToUserDto)
-                .collect(Collectors.toList());
+//        return usersRepository.findAll()
+//                .stream()
+//                .map(usersConverter::fromUserToUserDto)
+//                .collect(Collectors.toList());
+
+        return new ArrayList<>(
+                Arrays.asList(new User(1, "sinizyn", "sin", "fytfytf@iugg"),
+                                new User(2,"berdin","ber","oihcgfxfd@sert"),
+                                new User(3, "lupin", "lup","iufxd@xdcfg"))
+
+                        .stream()
+                        .map(usersConverter::fromUserToUserDto)
+                        .collect(Collectors.toList()));
     }
+
 
     private void validateUserDto(UserDto usersDto) throws ValidationException {
         if (isNull(usersDto)) {

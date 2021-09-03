@@ -45,32 +45,27 @@ public class DefaultUsersService implements UserService {
         return null;
     }
 
-//    @Override // для работы с базой
-//    public List<UserDto> findAll() {
-//
-//        return usersRepository.findAll()
-//                .stream()
-//                .map(usersConverter::fromUserToUserDto)
-//                .collect(Collectors.toList());
-//    }
-
-    @Override  // для работы без базы
+    @Override // для работы с базой
     public List<UserDto> findAll() {
 
-//        return usersRepository.findAll()
-//                .stream()
-//                .map(usersConverter::fromUserToUserDto)
-//                .collect(Collectors.toList());
-
-        return new ArrayList<>(
-                Arrays.asList(new User(1, "sinizyn", "sin", "fytfytf@iugg"),
-                                new User(2,"berdin","ber","oihcgfxfd@sert"),
-                                new User(3, "lupin", "lup","iufxd@xdcfg"))
-
-                        .stream()
-                        .map(usersConverter::fromUserToUserDto)
-                        .collect(Collectors.toList()));
+        return usersRepository.findAll()
+                .stream()
+                .map(usersConverter::fromUserToUserDto)
+                .collect(Collectors.toList());
     }
+
+ //   @Override  // для работы без базы
+//    public List<UserDto> findAll() {
+
+ //       return new ArrayList<>(
+ //               Arrays.asList(new User(1, "sinizyn", "sin", "fytfytf@iugg"),
+ //                               new User(2,"berdin","ber","oihcgfxfd@sert"),
+ //                               new User(3, "lupin", "lup","iufxd@xdcfg"))
+
+//                        .stream()
+//                        .map(usersConverter::fromUserToUserDto)
+//                        .collect(Collectors.toList()));
+//    }
 
 
     private void validateUserDto(UserDto usersDto) throws ValidationException {
